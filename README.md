@@ -21,4 +21,3 @@ The directory structure looks like<br>
     main.py<br>
   platformsystem<br>
 
-Test git config
