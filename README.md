@@ -20,3 +20,5 @@ The directory structure looks like<br>
     TestCase<br>
     main.py<br>
   platformsystem<br>
+
+Test git config
