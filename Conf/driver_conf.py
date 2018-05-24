@@ -5,6 +5,7 @@
 # @Last Modified by:   Danny
 # @Last Modified time: 2018-05-23 20:28:27
 from selenium import webdriver
+from logger.logger import logger
 
 
 class DriverConf(object):
@@ -12,6 +13,7 @@ class DriverConf(object):
     """
 
     @classmethod
+    @logger
     def getbrowser(cls, browser):
         """
         """

@@ -4,6 +4,7 @@
 # @Date: 2018-05-23 20:52:12
 # @Last Modified by:   Danny
 # @Last Modified time: 2018-05-23 20:52:12
+from logger.logger import logger
 HOST = {
     "QA": "www.baidu.com",
     "UAT": "www.baidu.com",
@@ -11,6 +12,7 @@ HOST = {
 }
 
 
+@logger
 def getHost(env):
     if isinstance(env, str):
         env = env.upper()
