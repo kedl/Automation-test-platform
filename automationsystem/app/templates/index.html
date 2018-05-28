@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block content %}
+
+<div>
+    <table class="table table-bordered">
+        <caption>页面管理</caption>
+        <thead>
+            <tr>
+                <th>页面名称</th>
+                <th>元素名称</th>
+                <th>元素定位类型</th>
+                <th>元素定位的值</th>
+                <th>操作类型</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for page in pages %}
+            <tr>
+                <td>{{ page.page_name }}</td>
+                <td>{{ page.ele_name }}</td>
+                <td>{{ page.ele_locater }}</td>
+                <td>{{ page.ele_locater_value }}</td>
+                <td>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            操作
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">编辑</a>
+                            </li>
+                            <li>
+                                <a href="#">删除</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
