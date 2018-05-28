@@ -12,6 +12,11 @@ from forms.edit_page import EditPages
 @app.route(r'/')
 @app.route(r'/index')
 def index():
+    return render_template("index.html", title='首页')
+
+
+@app.route(r'/pages')
+def pages():
     pages = [{
         'page_name': '首页',
         'ele_name': '登录按钮',
@@ -28,10 +33,10 @@ def index():
         'ele_locater': 'Xpath',
         'ele_locater_value': r"span//div[.='test']"
     }]
-    return render_template("index.html", title='主页', pages=pages)
+    return render_template("pages.html", title='页面管理', pages=pages)
 
 
-@app.route(r'/page/editpage')
+@app.route(r'/page/editpage', methods=['POST', 'GET'])
 def edit_pages():
     form = EditPages()
     return render_template('edit_pages.html', title='编辑页面', form=form)

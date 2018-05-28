@@ -19,16 +19,19 @@ nav.register_element('top',
                      Navbar(
                          u'AutomationSystem',
                          View(u'主页', 'index'),
-                         View(u'页面管理', 'index'),
-                         View(u'模块管理', 'index'),
+                         Subgroup(
+                             u'页面管理',
+                             View(u'查看页面', 'pages'),
+                             Separator(),
+                             View(u'添加页面', 'edit_pages'), ),
+                         Subgroup(
+                             u'模块管理',
+                             View(u'查看模块', 'index'),
+                             Separator(),
+                             View(u'添加模块', 'index'), ),
                          View(u'计划管理', 'index'),
                          View(u'用例管理', 'index'),
                          View(u'数据管理', 'index'),
-                         View(u'查看报告', 'index'),
-                         Subgroup(
-                             u'项目',
-                             View(u'项目一', 'index'),
-                             Separator(),
-                             View(u'项目二', 'index'), ), ))
+                         View(u'查看报告', 'index'), ))
 nav.init_app(app)
 from app import views
